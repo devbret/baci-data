@@ -1,4 +1,4 @@
 .vscode/
-data/
+data/baci/*.csv
 out/
 venv/
