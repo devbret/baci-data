@@ -54,6 +54,10 @@ Below are the required software programs and instructions for installing and usi
 
 ## Other Considerations
 
+Below you will find additional details about this project which fall outside of the setup and usage instructions above. They outline the specific skills and techniques this repository is meant to demonstrate, explain the licensing terms governing reuse of the code and provide contact information for questions or collaboration.
+
+### Abilities Demonstrated
+
 This project repo is intended to demonstrate an ability to do the following:
 
 - Process raw source data to identify the highest-value traded product categories for each year
@@ -63,5 +67,9 @@ This project repo is intended to demonstrate an ability to do the following:
 - Visualize the top products by year as an interactive, animated horizontal bar chart
 
 - Hover over each bar to see detailed information including the product name, trade value and quantity in tons
+
+### License Information
+
+This project is distributed under the MIT License. Which enables you to to use, copy, modify, merge, publish, distribute, sublicense and sell copies of this software, inclduing for commercial purposes, provided the original copyright and permission notices are included with any copies or substantial portions of the work. The software is provided "as is", without warranty of any kind, and the copyright holder accepts no liability arising from its use.
 
 If you have any questions or would like to collaborate, please reach out either on GitHub or via [my website](https://bretbernhoft.com/).
