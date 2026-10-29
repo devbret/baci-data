@@ -50,6 +50,11 @@ svg {
   stroke: #ccc;
 }
 
+.bars rect:hover {
+  fill: #ea580c;
+  opacity: 1;
+}
+
 .value-label {
   font-size: 12px;
   fill: #333;

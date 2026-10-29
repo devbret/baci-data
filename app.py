@@ -82,10 +82,11 @@ def main():
         df = read_baci_file(fp)
         year = int(df["t"].iloc[0])
 
-        grouped = df.groupby("k", as_index=False).agg(
-            value_kusd=("v", "sum"),
-            qty_tons=("q", "sum")
-        )
+        by_k = df.groupby("k")
+        grouped = pd.DataFrame({
+            "value_kusd": by_k["v"].sum(),
+            "qty_tons": by_k["q"].sum(min_count=1)
+        }).reset_index()
 
         total_year_value = float(grouped["value_kusd"].sum())
         yearly_totals.append({
