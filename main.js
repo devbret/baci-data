@@ -223,29 +223,9 @@ function render(year) {
       return base.formatRgb();
     })
     .attr("opacity", 0.95)
-    .on("mouseenter", function (event, d) {
-      d3.select(this)
-        .interrupt()
-        .transition()
-        .duration(150)
-        .attr("fill", "#ea580c")
-        .attr("opacity", 1);
-
-      showTooltip(event, d);
-    })
-    .on("mousemove", function (event) {
-      moveTooltip(event);
-    })
-    .on("mouseleave", function (event, d) {
-      d3.select(this)
-        .interrupt()
-        .transition()
-        .duration(150)
-        .attr("fill", color(d.v))
-        .attr("opacity", 0.95);
-
-      hideTooltip();
-    })
+    .on("mouseenter", showTooltip)
+    .on("mousemove", moveTooltip)
+    .on("mouseleave", hideTooltip)
     .transition()
     .duration(700)
     .attr("width", (d) => x(d.v));
@@ -307,7 +287,8 @@ function setYearIndex(idx) {
 }
 
 function startPlaying() {
-  if (timer) return;
+  if (timer || !state.years.length) return;
+  if (state.yearIndex >= state.years.length - 1) setYearIndex(0);
   playBtn.disabled = true;
   pauseBtn.disabled = false;
 
